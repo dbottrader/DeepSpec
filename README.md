@@ -2,6 +2,12 @@
 
 DeepSpec is a full-stack codebase for training and evaluating draft models for speculative decoding. It contains data preparation utilities, draft model implementations, training code, and evaluation scripts.
 
+## CP8 Supporting Data
+
+This fork also contains a separated CP8 / ASIN-HHC supporting-data package under [`docs/cp8/`](./docs/cp8/).
+
+That material is documentation/provenance support only. It does not modify DeepSpec training, evaluation, model, or data-preparation code, and it should not be read as an upstream DeepSpec claim or benchmark-improvement claim.
+
 ## Environment
 
 Install the Python dependencies:
@@ -77,9 +83,3 @@ full attribution.
 ## Acknowledgements
 
 DeepSpec builds on the ideas and code of several excellent open-source projects:
-
-- [SpecForge](https://github.com/sgl-project/SpecForge) (Apache-2.0) — the overall training framework and Eagle3 implementation; portions of the Eagle3 modeling, loss, optimizer, attention, and evaluation code are adapted from it. Adapted files carry an in-file attribution comment, and the full notice is recorded in [NOTICE](./NOTICE).
-- [DFlash](https://github.com/z-lab/dflash) (MIT) — the DFlash draft-model design and training recipe.
-- [Qwen3](https://github.com/QwenLM/Qwen3) and [Gemma](https://github.com/google-deepmind/gemma) — the target model families supported in this repo.
-
-We thank the authors and maintainers of these projects. Contributions of new algorithms are welcome.
