@@ -1,0 +1,72 @@
+{
+  "manifest_id": "CP8_DEEPSPEC_SUPPORTING_DATA_20260703",
+  "repository": "dbottrader/DeepSpec",
+  "branch": "cp8-supporting-data",
+  "scope": "documentation and supporting architecture data only",
+  "status": "E1_DRAFT",
+  "claim_boundary": "This manifest does not claim upstream DeepSpec authorship, benchmark improvement, independent verification, clinical validity, hardware certification, or production readiness.",
+  "cp8_summary": {
+    "name": "CP8 / ASIN-HHC",
+    "interpretation": "human/AI workflow orchestration, provenance, symbolic-interface, and governance framework",
+    "primary_layers": [
+      "human interface",
+      "agent/workflow",
+      "provenance",
+      "symbolic orientation",
+      "evaluation/governance"
+    ]
+  },
+  "known_artifact_families": [
+    {
+      "id": "cp8-cycle-010",
+      "title": "ASIN-HHC Cycle 010 validation materials",
+      "type": "workflow/provenance documentation",
+      "status": "reported/documented",
+      "notes": "Includes room-based workflow language and hash/provenance framing. Exact source files should be added separately before promotion beyond E1."
+    },
+    {
+      "id": "digma-cousa-28",
+      "title": "DIGMA COUSA 28-Glyph OS",
+      "type": "symbolic UI / orientation layer",
+      "status": "reported/documented",
+      "notes": "Useful for interface and memory framing; not benchmark evidence."
+    },
+    {
+      "id": "anu-28",
+      "title": "ANU-28 glyph/operator set",
+      "type": "symbolic grammar",
+      "status": "reported/documented",
+      "notes": "Should remain separate from scientific claims unless independently evaluated."
+    },
+    {
+      "id": "weaver-promotion-gate",
+      "title": "Weaver Epistemic Promotion Gate",
+      "type": "governance/evidence protocol",
+      "status": "reported/documented",
+      "notes": "Defines evidence levels, invariants, anti-theater checks, and promotion boundaries."
+    },
+    {
+      "id": "cathedral-spine-mvp0",
+      "title": "Cathedral Spine MVP0 runtime witness package",
+      "type": "runtime/test package",
+      "status": "reported local pass",
+      "notes": "Reported 14/14 local tests. Source package and logs must be committed before E2/E3 classification."
+    },
+    {
+      "id": "shock-kernel-template",
+      "title": "Shock Kernel witness scaffold",
+      "type": "template package",
+      "status": "template only",
+      "notes": "Should remain explicitly non-promoted until real source and tests are supplied."
+    }
+  ],
+  "recommended_next_files": [
+    "cp8/provenance_manifest.py",
+    "cp8/schema/artifact.schema.json",
+    "cp8/schema/run_manifest.schema.json",
+    "tests/cp8/test_manifest.py",
+    "examples/cp8/sample_deepspec_run_manifest.json"
+  ],
+  "created_for": "CP8 supporting data publication alongside DeepSpec fork",
+  "created_date": "2026-07-03"
+}
