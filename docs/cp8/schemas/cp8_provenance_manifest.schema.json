@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cp8.local/schemas/cp8_provenance_manifest.schema.json",
+  "title": "CP8 Provenance Manifest",
+  "type": "object",
+  "required": [
+    "manifest_type",
+    "manifest_version",
+    "generated_at_utc",
+    "artifact_family",
+    "source_context",
+    "author",
+    "evidence_level",
+    "claim_boundary",
+    "inputs",
+    "environment",
+    "failure_modes",
+    "manifest_sha256"
+  ],
+  "properties": {
+    "manifest_type": {"const": "CP8_PROVENANCE_MANIFEST"},
+    "manifest_version": {"type": "string"},
+    "generated_at_utc": {"type": "string", "format": "date-time"},
+    "artifact_family": {"type": "string", "minLength": 1},
+    "source_context": {"type": "string"},
+    "author": {"type": "string"},
+    "evidence_level": {
+      "type": "string",
+      "enum": ["E0_IDEA", "E1_DRAFT", "E2_LOCAL", "E3_REPRO", "E4_REVIEWED", "E5_PRODUCTION"]
+    },
+    "claim_boundary": {
+      "type": "object",
+      "required": [
+        "model_performance_claim",
+        "production_claim",
+        "independent_reproduction_claim",
+        "symbolic_causality_claim"
+      ],
+      "properties": {
+        "model_performance_claim": {"type": "boolean"},
+        "production_claim": {"type": "boolean"},
+        "independent_reproduction_claim": {"type": "boolean"},
+        "symbolic_causality_claim": {"type": "boolean"}
+      },
+      "additionalProperties": true
+    },
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["path", "name", "size_bytes", "sha256", "modified_time_utc"],
+        "properties": {
+          "path": {"type": "string"},
+          "name": {"type": "string"},
+          "size_bytes": {"type": "integer", "minimum": 0},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+          "modified_time_utc": {"type": "string", "format": "date-time"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "environment": {"type": "object"},
+    "failure_modes": {"type": "array", "items": {"type": "string"}},
+    "manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "additionalProperties": true
+}
